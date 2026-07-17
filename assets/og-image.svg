@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#123a5e"/>
+      <stop offset="1" stop-color="#0a2846"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="1080" cy="80" r="260" fill="#f2a900" opacity="0.06"/>
+  <circle cx="60" cy="590" r="220" fill="#f2a900" opacity="0.05"/>
+
+  <rect x="100" y="120" width="118" height="118" rx="26" fill="#0d3252"/>
+  <path d="M143 158 L182 179 L143 200" stroke="#ffffff" stroke-width="9" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.5"/>
+  <path d="M168 158 L207 179 L168 200" stroke="#f2a900" stroke-width="10" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <text x="100" y="330" font-family="Georgia, 'Times New Roman', serif" font-weight="700" font-size="66" fill="#ffffff">Smart Ride</text>
+  <text x="100" y="400" font-family="Georgia, 'Times New Roman', serif" font-weight="700" font-size="66" fill="#ffffff">Transportation</text>
+
+  <rect x="100" y="440" width="70" height="6" rx="3" fill="#f2a900"/>
+  <text x="100" y="490" font-family="Arial, Helvetica, sans-serif" font-weight="600" font-size="28" fill="#cfe0f0">Bay Area employee shuttle services</text>
+  <text x="100" y="530" font-family="Arial, Helvetica, sans-serif" font-weight="400" font-size="24" fill="#8fa9c2">San Francisco &#183; Oakland &#183; San Jose &#183; Peninsula</text>
+</svg>
