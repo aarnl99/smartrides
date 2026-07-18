@@ -316,8 +316,7 @@ footer.site-footer { background: var(--black); color: rgba(255,255,255,0.55); pa
         </div>
       </div>
 
-      <form class="lead-form" id="leadForm" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-        <input type="hidden" name="form-name" value="contact">
+      <form class="lead-form" id="leadForm" name="contact" method="POST">
         <div style="position:absolute;left:-9999px;" aria-hidden="true">
           <label>Leave this field blank: <input name="bot-field" tabindex="-1" autocomplete="off"></label>
         </div>
@@ -442,19 +441,42 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  // Paste the URL you get from deploying the Google Apps Script web app here.
+  var SHEET_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxI6W591drYay94mElphN_KFE_2J96O8wl4IF4BN00uzfUWGhcOIS3BHK9aNifX2a4Y/exec';
+
   var form = document.getElementById('leadForm');
   var status = document.getElementById('formStatus');
   var submitBtn = document.getElementById('submitBtn');
   if (form) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
+
+      // Honeypot: if this hidden field got filled in, silently treat it as spam.
+      if (form.querySelector('[name="bot-field"]').value) {
+        status.textContent = "Thanks. Your request has been sent, we'll follow up within 1 to 2 business days.";
+        status.className = 'success show';
+        form.reset();
+        return;
+      }
+
       submitBtn.disabled = true;
       submitBtn.textContent = 'Sending...';
-      var data = new URLSearchParams(new FormData(form)).toString();
-      fetch('/', {
+
+      var payload = {
+        name: form.name.value,
+        company: form.company.value,
+        email: form.email.value,
+        phone: form.phone.value,
+        headcount: form.headcount.value,
+        shift: form.shift.value,
+        message: form.message.value
+      };
+
+      fetch(SHEET_SCRIPT_URL, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: data
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify(payload)
       })
         .then(function () {
           status.textContent = "Thanks. Your request has been sent, we'll follow up within 1 to 2 business days.";
