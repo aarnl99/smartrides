@@ -177,6 +177,27 @@ section.alt { background: var(--warm-bg); }
 .detail-list li:last-child { border-bottom: none; }
 .detail-list .check { color: var(--gold-dark); font-size: 1.1rem; flex-shrink: 0; font-weight: 800; }
 
+/* Benefit split panels */
+.benefit-intro { max-width: 760px; margin: 0 auto 44px; text-align: center; color: var(--gray-600); }
+.benefit-intro p { margin: 0 0 14px; }
+.benefit-intro p:last-child { margin-bottom: 0; }
+.benefit-intro strong { color: var(--navy); }
+.benefit-split { display: grid; grid-template-columns: 1fr 1fr; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+.benefit-panel { padding: 44px 40px; }
+.benefit-panel.employer { background: var(--navy); color: var(--white); }
+.benefit-panel.employee { background: var(--gold); color: var(--navy-dark); }
+.benefit-panel h3 { font-family: var(--serif); font-size: 1.25rem; margin: 0 0 26px; letter-spacing: 0.02em; }
+.benefit-panel ul { list-style: none; margin: 0; padding: 0; }
+.benefit-panel li { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 20px; font-weight: 600; font-size: 0.94rem; line-height: 1.55; }
+.benefit-panel li:last-child { margin-bottom: 0; }
+.benefit-check { flex-shrink: 0; width: 20px; height: 20px; margin-top: 1px; }
+.benefit-panel.employer .benefit-check { color: var(--gold); }
+.benefit-panel.employee .benefit-check { color: var(--navy-dark); }
+.benefit-cta { text-align: center; margin-top: 36px; }
+@media (max-width: 760px) {
+  .benefit-split { grid-template-columns: 1fr; }
+}
+
 /* Contact */
 .contact-grid { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 48px; align-items: start; }
 .contact-info-card { background: var(--warm-bg); border: 1px solid var(--warm-border); border-radius: var(--radius); padding: 32px; }
@@ -289,6 +310,42 @@ footer.site-footer { background: var(--black); color: rgba(255,255,255,0.55); pa
     <span class="eyebrow">Our Services</span>
     <h1>Employee shuttle programs built around your workforce</h1>
     <p>Every company's commute is different. We design service around your shifts, sites, and headcount, not the other way around.</p>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">The Business Case</span>
+      <h2>Shuttle programs work for employers and employees</h2>
+    </div>
+    <div class="benefit-intro">
+      <p>Employee shuttle programs solve two problems at once: they take pressure off recruiting and retention, and they hand employees back time and energy a solo commute takes away.</p>
+      <p>National surveys have found that up to <strong>23% of employees have left a job</strong> over an unworkable commute, and the EPA estimates a shared commute program saves roughly <strong>4.6 tons of CO2 a year</strong> for every vehicle it takes off the road.</p>
+    </div>
+    <div class="benefit-split">
+      <div class="benefit-panel employer">
+        <h3>Employer Benefits</h3>
+        <ul>
+          <li><svg class="benefit-check" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Employees arrive at work without the stress of driving in traffic or hunting for parking</li>
+          <li><svg class="benefit-check" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> A visible perk that helps you attract and retain talent, especially with employees under 35</li>
+          <li><svg class="benefit-check" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Cuts down on the parking and real estate a growing campus needs to build or lease</li>
+          <li><svg class="benefit-check" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Reduces your company's carbon footprint as part of a broader sustainability goal</li>
+        </ul>
+      </div>
+      <div class="benefit-panel employee">
+        <h3>Employee Benefits</h3>
+        <ul>
+          <li><svg class="benefit-check" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Relax, read, or catch up on rest while someone else handles the drive</li>
+          <li><svg class="benefit-check" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Get a head start on email or admin tasks before you're even in the building</li>
+          <li><svg class="benefit-check" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Skip the stress of navigating traffic, tolls, and parking on your own</li>
+          <li><svg class="benefit-check" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Ride in newer, well-maintained vehicles built for a comfortable daily commute</li>
+        </ul>
+      </div>
+    </div>
+    <div class="benefit-cta">
+      <a href="contact.html" class="btn btn-primary">Request a Quote</a>
+    </div>
   </div>
 </section>
 
