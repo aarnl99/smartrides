@@ -122,6 +122,14 @@ nav.main-nav a:hover, nav.main-nav a.active { color: var(--navy); }
 .ticker-item { display: flex; align-items: center; gap: 10px; padding: 0 22px; font-size: 0.74rem; font-weight: 700; color: var(--navy-dark); letter-spacing: 0.08em; text-transform: uppercase; white-space: nowrap; }
 .ticker-sep { color: rgba(10,40,70,0.35); font-size: 8px; }
 
+/* Photo band */
+.photo-band { padding: 56px 0 0; }
+.photo-band-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.photo-band-grid img { width: 100%; aspect-ratio: 5 / 4; object-fit: cover; border-radius: var(--radius); border: 1px solid var(--warm-border); display: block; }
+@media (max-width: 640px) {
+  .photo-band-grid { grid-template-columns: 1fr; }
+}
+
 /* Sections */
 section { padding: 80px 0; }
 section.alt { background: var(--warm-bg); }
@@ -371,6 +379,14 @@ footer.site-footer { background: var(--black); color: rgba(255,255,255,0.55); pa
   </div>
 </div>
 
+<div class="photo-band">
+  <div class="container">
+    <div class="photo-band-grid">
+      <img src="assets/photos/home-photo-1.jpg" alt="Smart Ride shuttle serving a Bay Area corporate campus">
+      <img src="assets/photos/home-photo-2.jpg" alt="Employees boarding a Smart Ride shuttle">
+    </div>
+  </div>
+</div>
 
 <section>
   <div class="container">
@@ -448,8 +464,8 @@ footer.site-footer { background: var(--black); color: rgba(255,255,255,0.55); pa
     </div>
     <div class="why-item">
       <div class="why-num">04</div>
-      <div class="why-title">Flexible Contracts</div>
-      <p class="why-desc">Service that scales up or down as your headcount changes.</p>
+      <div class="why-title">A Fleet We Own, Not Broker</div>
+      <p class="why-desc">Every vehicle is ours, driven by our own trained drivers, not subcontracted out to a network of third-party operators you'd have to manage yourself.</p>
     </div>
   </div>
 </section>
